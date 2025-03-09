@@ -1,13 +1,251 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Import Google Fonts & Bootstrap Icons */
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+/* ======================================
+   Global Variables 
+====================================== */
+:root {
+  --body-color: #ddd;
+  --primary-color: #8750f7;
+  --secondary-color: #2a1454;
+  --white-color: #fff;
+  --light-color: #f6f3fc;
+  --body-font: "Sora", sans-serif;
+
+  /* Typography */
+  --textClr: #140c1c;
+  --body-text: 16px;
+  --detail-text: 20px;
+  --main-heading: 64px;
+  --heading: 30px;
+  --title: 25px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Dark Theme Colors (Applied when data-bs-theme="dark") */
+[data-bs-theme="dark"] {
+  --light-color: #050709;
+  --textClr: #fff;
+  --body-color: #0f0715;
+}
+
+/* ======================================
+   Responsive Typography
+====================================== */
+@media (width >= 992px) {
+  :root {
+    --main-heading: 48px;
+    --heading: 30px;
+    --title: 26px;
+    --detail-text: 18px;
+    --body-text: 15px;
+  }
+
+  
+}
+
+@media (max-width: 992px) {
+  :root {
+    --main-heading: 36px;
+    --heading: 26px;
+    --title: 22px;
+    --detail-text: 16px;
+    --body-text: 14px;
+  }
+
+  /* Adjust container padding for better spacing */
+  .container {
+    max-width: 1430px;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  
+}
+
+@media (max-width: 768px) {
+  :root {
+    --main-heading: 28px;
+    --heading: 22px;
+    --title: 20px;
+    --detail-text: 15px;
+    --body-text: 13px;
+  }
+
+ 
+}
+
+/* ======================================
+   Global Reset & Base Styles
+====================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+/* Body styles */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--body-font) !important;
+  color: var(--textClr);
+  overflow-x: hidden;
+  /* background-color: var(--body-color); */
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/* ======================================
+   Common Utility Classes
+====================================== */
+.primary-clr {
+  color: var(--primary-color);
+}
+
+.light-bg {
+  background-color: var(--light-color) !important;
+}
+
+/* ======================================
+   Buttons
+====================================== */
+.primary-btn {
+  padding: 4px 18px;
+  font-weight: 700;
+  background-image: linear-gradient(
+    90deg,
+    var(--primary-color) 0,
+    var(--secondary-color) 51%,
+    var(--primary-color)
+  );
+  color: var(--white-color);
+  border: none;
+  border-radius: 9999px;
+  padding: 12px 34px;
+  text-decoration: none;
+}
+
+/* Secondary button with border */
+.secondary-btn {
+  font-weight: 700;
+  border: 2px solid var(--primary-color);
+  border-radius: 9999px;
+  padding: 12px 28px;
+  background: none;
+  color: var(--primary-color);
+  transition: all 0.5s ease-out;
+}
+
+/* Hover effect for secondary button */
+.secondary-btn:hover {
+  color: white;
+  background: var(--primary-color);
+}
+
+/* ======================================
+   Typography Styles
+====================================== */
+.main-heading {
+  font-size: var(--main-heading);
+  font-weight: bold;
+  background-clip: text;
+  background-image: linear-gradient(
+    90deg,
+    var(--primary-color) 0,
+    var(--secondary-color) 51%,
+    var(--primary-color)
+  );
+  color: transparent;
+}
+
+.heading {
+  font-size: var(--heading);
+  font-weight: bold;
+}
+
+.title {
+  font-size: var(--title);
+}
+
+.body-text {
+  font-size: var(--body-text);
+  color: var(--textClr);
+}
+
+.detail-text {
+  font-size: var(--detail-text);
+  line-height: 26px;
+  margin: 0;
+}
+
+
+
+.themeChangeBtn {
+  border-radius: 25px;
+  background-image: linear-gradient(
+    90deg,
+    var(--primary-color) 0,
+    var(--secondary-color) 51%,
+    var(--primary-color)
+  );
+  border: none;
+  border-top-left-radius: 9999px;
+  border-bottom-left-radius: 9999px;
+  color: white;
+  padding: 5px 0px;
+  transition-duration: .4s;
+  transform: translateX(40px);
+}
+
+.themeChangeBtn span {
+  visibility: hidden;
+}
+.themeChangeBtn:hover{
+  transform: translateX(0px);
+}
+
+.themeChangeBtn:hover span {
+  visibility: visible;
 }
