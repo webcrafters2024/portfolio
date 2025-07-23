@@ -1,0 +1,63 @@
+.services .list-group .list-group-item {
+  background: transparent;
+  z-index: 99;
+  border: none;
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+.services
+  .list-group
+  .current-active.list-group-item
+  .service-title
+  .detail_text,
+.services .list-group .current-active.list-group-item .service-title .heading,
+.services
+  .list-group
+  .current-active.list-group-item
+  .service-title
+  .service-des,
+.services .list-group .current-active.list-group-item .service-link,
+.services .list-group .current-active.list-group-item .body-text {
+  color: white;
+  transition: all 0.5 ease;
+}
+
+.services .list-group .service-title {
+  width: 40%;
+}
+
+.services .list-group .service-des {
+  width: 50%;
+}
+
+.services .list-group .service-link {
+  right: 25px;
+}
+
+.services .active-bg {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  z-index: 1;
+  background: var(--primary-color);
+  background: linear-gradient(
+    260deg,
+    var(--secondary-color) 0,
+    var(--primary-color) 100%
+  );
+  transition: all 0.5s ease;
+}
+
+
+@media only screen and (max-width: 991px){
+    .services .list-group .service-des,
+    .services .list-group .service-title {
+        width: 100%;
+    }
+    .service-link {
+        right: 20px;
+        top: 35px;
+    }
+}

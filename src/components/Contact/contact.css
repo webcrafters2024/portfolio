@@ -1,0 +1,13 @@
+.contact-section .contact-form {
+  background: var(--light-color);
+  padding: 50px 25px;
+  border-radius: 20px;
+}
+
+.contact-section .contact-information .icon-box {
+  background-color: var(--primary-color);
+  width: 54px;
+  height: 54px;
+  text-align: center;
+  color: white;
+}

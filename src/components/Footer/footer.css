@@ -1,0 +1,11 @@
+.footer {
+    background: var(--secondary-color);
+}
+
+.footer .nav-item .nav-link {
+    color: white;
+}
+
+.footer p {
+    color: whitesmoke;
+}

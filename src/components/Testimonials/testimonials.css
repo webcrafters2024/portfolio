@@ -1,0 +1,10 @@
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.testimonials .card .user-img {
+    border-bottom-left-radius: 125px;
+    width: 120px;
+}
+

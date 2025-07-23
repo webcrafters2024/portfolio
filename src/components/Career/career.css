@@ -1,0 +1,17 @@
+.resume .card {
+  transition: 0.5s;
+}
+
+.resume .card:hover {
+  background: linear-gradient(
+    260deg,
+    var(--secondary-color) 0%,
+    var(--primary-color) 100%
+  );
+}
+
+.resume .card:hover .detail-text,
+.resume .card:hover .title,
+.resume .card:hover .body-text {
+  color: white !important;
+}
